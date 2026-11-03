@@ -15,6 +15,32 @@ function app_config(): array
     return require APP_ROOT . '/config.php';
 }
 
+function app_setting(string $key, string $fallback): string
+{
+    $value = app_config()[$key] ?? null;
+    return is_string($value) && $value !== '' ? $value : $fallback;
+}
+
+function app_brand(): string
+{
+    return app_setting('app_name', 'MCSP RBS KPK Kabupaten Murung Raya');
+}
+
+function app_headline(): string
+{
+    return app_setting('app_headline', 'Transparansi dan Publikasi');
+}
+
+function app_subtitle(): string
+{
+    return app_setting('app_subtitle', 'Dokumen Publikasi ' . app_brand());
+}
+
+function app_logo(): string
+{
+    return app_setting('app_logo', 'logo-murung-raya.png');
+}
+
 function admin_credentials(): array
 {
     $config = app_config();
@@ -633,9 +659,9 @@ function page_header(string $title, string $bodyClass = ''): void
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><?= e($title) ?> - MCSP RBS KPK Kabupaten Murung Raya</title>
-  <link rel="icon" type="image/png" href="<?= e(app_url('logo-murung-raya.png')) ?>">
-  <link rel="apple-touch-icon" href="<?= e(app_url('logo-murung-raya.png')) ?>">
+  <title><?= e($title) ?> - <?= e(app_brand()) ?></title>
+  <link rel="icon" type="image/png" href="<?= e(app_url(app_logo())) ?>">
+  <link rel="apple-touch-icon" href="<?= e(app_url(app_logo())) ?>">
   <link rel="stylesheet" href="<?= e(app_url('assets/app.css')) ?>">
 </head>
 <body<?= $bodyClass ? ' class="' . e($bodyClass) . '"' : '' ?>>

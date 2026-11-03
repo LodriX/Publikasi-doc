@@ -58,11 +58,11 @@ page_header('Transparansi dan Publikasi');
 <main class="shell">
   <header class="site-header site-header-public">
     <div>
-      <div class="brand-kicker">MCSP RBS KPK Kabupaten Murung Raya</div>
-      <h1>Transparansi dan Publikasi</h1>
-      <p class="subtitle">Dokumen Publikasi MCSP RBS KPK Kabupaten Murung Raya</p>
+      <div class="brand-kicker"><?= e(app_brand()) ?></div>
+      <h1><?= e(app_headline()) ?></h1>
+      <p class="subtitle"><?= e(app_subtitle()) ?></p>
     </div>
-    <img class="site-logo" src="<?= e(app_url('logo-murung-raya.png')) ?>" alt="Lambang Kabupaten Murung Raya">
+    <img class="site-logo" src="<?= e(app_url(app_logo())) ?>" alt="<?= e(app_brand()) ?>">
   </header>
 
   <div class="content-intro"><div><h2>Arsip Dokumen Publik</h2><p>Pilih folder untuk menelusuri dokumen yang tersedia.</p></div></div>

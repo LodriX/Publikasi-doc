@@ -365,7 +365,7 @@ page_header('Admin Dokumen', 'admin-page');
 <main class="shell">
   <div class="admin-layout">
     <aside class="admin-sidebar">
-      <div class="admin-logo"><img src="<?= e(app_url('logo-murung-raya.png')) ?>" alt="Lambang Kabupaten Murung Raya"><span>MCSP RBS KPK<small>Administrator</small></span></div>
+      <div class="admin-logo"><img src="<?= e(app_url(app_logo())) ?>" alt="<?= e(app_brand()) ?>"><span><?= e(app_brand()) ?><small>Administrator</small></span></div>
       <nav class="admin-nav" aria-label="Navigasi admin">
         <a class="<?= $page === 'dashboard' ? 'is-active' : '' ?>" href="admin.php?page=dashboard">Dashboard</a>
         <a class="<?= $page === 'unggah' ? 'is-active' : '' ?>" href="admin.php?page=unggah">Unggah Dokumen</a>

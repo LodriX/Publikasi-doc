@@ -1,39 +1,52 @@
-# MCSP RBS KPK Document Gallery
+# Portal Publikasi & Transparansi Dokumen
 
-Galeri dokumen publik dengan satu akun admin. Dokumen publik hanya menampilkan judul, tanggal publikasi, tombol unduh, dan tautan langsung.
+Aplikasi web ringan berbasis PHP untuk mempublikasikan arsip dokumen resmi instansi agar transparan dan mudah diakses publik: telusur per folder, preview dalam popup, salin tautan bersih, statistik dilihat/diunduh, dan panel administrasi satu akun. Tanpa basis data — semua metadata disimpan sebagai berkas PHP di folder `data/`.
 
+Identitas aplikasi (nama, tagline, logo) diarahkan sepenuhnya dari `config.php`, sehingga aplikasi ini dapat digunakan instansi mana pun. Nilai bawaan kode memakai identitas MCSP RBS KPK Kabupaten Murung Raya sebagai contoh pemakai.
 
-## Menjalankan lokal
+## Konfigurasi Identitas
 
-PHP bawaan saat ini membatasi unggahan ke 2 MB. Jalankan server lokal dengan batas unggahan aplikasi:
+| Kunci | Keterangan |
+|---|---|
+| `app_name` | Nama aplikasi/instansi — muncul di judul tab, kicker halaman, dan panel admin |
+| `app_headline` | Judul besar halaman depan |
+| `app_subtitle` | Kalimat subjudul halaman depan |
+| `app_logo` | Nama berkas logo (dibaca dari root aplikasi); dipakai sebagai favicon juga |
+
+## Menjalankan Lokal
+
+1. Salin `config.example.php` menjadi `config.php`, lalu sesuaikan identitas, kredensial admin, dan `public_base_url` (URL HTTPS publik, misal `https://domain.tld/portal`).
+2. Password bawaan contoh: `ubah-password-ini`. Segera ganti lewat menu **Pengaturan Akun** setelah login, atau isi `admin_password_hash` sendiri dengan `password_hash()` PHP.
+3. Batas unggah 2 MB bawaan PHP bisa diangkat lewat parameter server:
 
 ```sh
 php -d upload_max_filesize=32M -d post_max_size=32M -S localhost:8000 router.php
 ```
 
-Buka `http://localhost:8000` untuk daftar publik atau `http://localhost:8000/admin.php` untuk panel admin.
+Buka `http://localhost:8000` untuk daftar publik dan `http://localhost:8000/admin.php` untuk panel admin.
 
-## Hosting PHP
+## Struktur & Penyimpanan
 
-File `.user.ini` menetapkan `upload_max_filesize=32M` dan `post_max_size=32M`. Bila hosting tidak membaca `.user.ini`, atur kedua nilai tersebut di konfigurasi PHP/server. Pastikan folder `Files/` dan `data/` bisa ditulis oleh proses PHP, tetapi tidak dapat diakses langsung lewat web server. Konfigurasi Apache yang disertakan menolak akses tersebut; untuk Nginx, tambahkan aturan yang setara.
+- `Files/` — dokumen yang diunggah admin (tidak boleh diakses langsung lewat web)
+- `data/` — registri publikasi (`documents.php`), statistik, kredensial, audit log; dibuat otomatis dan harus dapat ditulis PHP
+- Ulangan URL bersih `/dokumen/folder/nama-dokumen-slug` ditangani oleh aturan `RewriteRule` di `.htaccess`
 
-## Memperbarui di cPanel
+## Hosting cPanel / Apache
 
-Gunakan `MCSP-update.zip` untuk memperbarui aplikasi yang sudah berjalan. Paket ini hanya berisi kode dan aset, sehingga tidak menimpa folder `Files/`, folder `data/`, maupun `config.php` di server.
+1. Unggah seluruh isi aplikasi ke subfolder di `public_html`, misal `public_html/MCSP/`, lalu sesuaikan `public_base_url` dengan `https://domain.tld/MCSP`.
+2. Pastikan folder `Files/` dan `data/` dapat ditulis proses PHP, tetapi tidak boleh diakses langsung lewat web (`.htaccess` bawaan sudah menolak akses tersebut).
+3. `.user.ini` menetapkan `upload_max_filesize=32M` dan `post_max_size=32M`; bila hosting tidak membacanya, atur kedua nilai tersebut lewat konfigurasi PHP hosting.
+4. Butuh PHP 8.0+.
 
-1. Buka File Manager cPanel dan masuk ke `public_html`.
-2. Unggah `MCSP-update.zip` tanpa menghapus folder `MCSP` yang sudah ada.
-3. Extract ZIP di dalam `public_html` dan pilih untuk menimpa file bila diminta.
-4. Jangan hapus atau menimpa `public_html/MCSP/Files/`, `public_html/MCSP/data/`, dan `public_html/MCSP/config.php`.
+## Preview Office & Header Keamanan
 
-Dokumen yang sudah dipublikasikan dan data publikasinya tetap tersedia setelah pembaruan. Fitur kredensial, pembatasan login, dan audit log akan membuat file baru di `data/` secara otomatis; folder tersebut harus tetap dapat ditulis oleh PHP.
+- Preview DOCX/XLS/XLSX memakai Microsoft Office Online Viewer: Microsoft harus dapat membuka `view.php` dari internet, sehingga preview Office hanya berjalan di domain HTTPS publik. PDF, gambar, dan CSV dipreview langsung oleh browser.
+- `.htaccess` aplikasi menerbitkan `Content-Security-Policy` sendiri (memuat `view.officeapps.live.com` pada `frame-src`) sehingga CSP `public_html` root tidak memblokir preview, dan menonaktifkan `X-Frame-Options`/CSP hanya untuk `view.php`.
+- Tombol `Copy link` memakai URL bersih, misal `/MCSP/dokumen/2026/nama-dokumen-pdf`.
+- Preview cepat: `view.php` menghantar berkas dengan potongan besar dan dukungan `ETag`/`304`, sehingga pembukaan ulang dokumen yang sama bersifat instan.
 
-## Preview Office
+## Kontribusi
 
-Preview DOCX, XLS, dan XLSX memakai Microsoft Office Online Viewer. Atur `public_base_url` di `config.php` ke URL HTTPS publik aplikasi, misalnya `https://murungrayakab.go.id/MCSP`. Microsoft harus dapat membuka `view.php` dari internet; preview Office tidak tersedia pada localhost. PDF, gambar, dan CSV dipreview langsung oleh browser.
-
-Tombol `Copy link` menggunakan URL preview yang rapi, misalnya `/MCSP/dokumen/tahun-2026/nama-dokumen-pdf`, bukan URL unduhan dengan query string. Konfigurasi Apache di `.htaccess` diperlukan agar URL ini berfungsi pada hosting.
-
-## Hosting Preview
-
-Hosting tidak boleh mengirim `X-Frame-Options: DENY` atau `Content-Security-Policy` yang melarang iframe untuk `view.php`, karena endpoint tersebut menjadi isi popup preview dan sumber Microsoft Office Online Viewer. Aturan `.htaccess` sudah menonaktifkan kedua header hanya untuk `view.php`. Selain itu, `.htaccess` aplikasi menerbitkan `Content-Security-Policy` sendiri yang mengizinkan `view.officeapps.live.com` pada `frame-src`, sehingga CSP `public_html` root tidak memblokir preview Office. Jika hosting tetap memaksakan header tersebut, minta penyedia hosting mengizinkan iframe untuk `/MCSP/view.php`.
+1. `git clone https://github.com/LodriX/Publikasi-doc.git`
+2. `cp config.example.php config.php` lalu sesuaikan.
+3. Jalankan langkah "Menjalankan Lokal".

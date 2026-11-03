@@ -25,7 +25,7 @@ page_header($document['filename']);
 <main class="shell">
   <header class="site-header detail-header">
     <div class="detail-title-block">
-      <img class="detail-logo" src="<?= e(app_url('logo-murung-raya.png')) ?>" alt="Lambang Kabupaten Murung Raya">
+      <img class="detail-logo" src="<?= e(app_url(app_logo())) ?>" alt="<?= e(app_brand()) ?>">
       <div>
         <div class="brand-kicker">Detail Dokumen Publik</div>
         <h1 class="document-detail-title"><?= e($document['filename']) ?></h1>
