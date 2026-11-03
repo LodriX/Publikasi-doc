@@ -1,0 +1,17 @@
+Options -Indexes
+DirectoryIndex index.php
+RewriteEngine On
+RewriteRule ^dokumen/(.+)/?$ document.php?slug=$1 [L,QSA,B]
+
+# CSP milik MCSP: menimpa CSP public_html root untuk folder ini,
+# menambahkan izin iframe Microsoft Office Online Viewer untuk preview DOCX/XLS/XLSX.
+<IfModule mod_headers.c>
+  Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-src 'self' https://view.officeapps.live.com; frame-ancestors 'self'"
+</IfModule>
+
+<IfModule mod_headers.c>
+  <Files "view.php">
+    Header always unset X-Frame-Options
+    Header always unset Content-Security-Policy
+  </Files>
+</IfModule>
