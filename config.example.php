@@ -3,10 +3,12 @@
 declare(strict_types=1);
 
 return [
-    'app_name' => 'Portal Publikasi Dokumen',
-    'app_headline' => 'Transparansi dan Publikasi',
-    'app_subtitle' => 'Dokumen publik instansi Anda',
+    'app_name' => 'SIMPUN',
+    'app_headline' => 'Sistem Informasi Manajemen Publikasi Untuk Naskah',
+    'app_subtitle' => 'Sistem Informasi Manajemen Publikasi Untuk Naskah',
     'app_logo' => 'logo.png',
+    'theme_style' => 'hud',
+    'theme_mode' => 'dark',
     'admin_username' => 'admin',
     'admin_password_hash' => '$2y$10$ynnnsbB1XTSbzbw4uW27fOxGlVbEjERzzlNZu7mU4cVZuuZOa0Yfa',
     'max_upload_bytes' => 30 * 1024 * 1024,

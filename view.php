@@ -3,16 +3,19 @@
 declare(strict_types=1);
 
 require __DIR__ . '/lib.php';
+load_admin_session_if_present();
 
 $relativePath = (string) ($_GET['file'] ?? '');
-$documents = load_documents();
-$document = $documents[$relativePath] ?? null;
-$path = is_array($document) ? absolute_file_path($relativePath) : null;
+$accessible = accessible_document_file($relativePath);
 
-if ($path === null) {
+if ($accessible === null) {
     http_response_code(404);
+    header('Cache-Control: private, no-store');
     exit('Dokumen tidak ditemukan.');
 }
+$document = $accessible['document'];
+$path = $accessible['absolute_path'];
+$restricted = document_access_level($document, $relativePath) !== 'public';
 
 $mime = mime_content_type($path) ?: 'application/octet-stream';
 $filename = document_display_name($document, $relativePath);
@@ -48,9 +51,9 @@ $etagBody = md5($size . ':' . (filemtime($path) ?: 0));
 $etag = '"' . $etagBody . '"';
 $ifNoneMatch = str_replace('W/', '', trim((string) ($_SERVER['HTTP_IF_NONE_MATCH'] ?? '')));
 $ifNoneMatch = trim($ifNoneMatch, '"');
-if ($ifNoneMatch !== '' && $ifNoneMatch === $etagBody) {
+if (!$restricted && $ifNoneMatch !== '' && $ifNoneMatch === $etagBody) {
     http_response_code(304);
-    header('Cache-Control: private, max-age=86400, must-revalidate');
+    header('Cache-Control: private, no-cache, must-revalidate');
     header('X-Content-Type-Options: nosniff');
     header('ETag: ' . $etag);
     exit;
@@ -59,7 +62,10 @@ if ($ifNoneMatch !== '' && $ifNoneMatch === $etagBody) {
 header('Content-Type: ' . $mime);
 header('Content-Length: ' . (string) $length);
 header("Content-Disposition: inline; filename*=UTF-8''" . rawurlencode($filename));
-header('Cache-Control: private, max-age=86400, must-revalidate');
+header('Cache-Control: ' . ($restricted ? 'private, no-store' : 'private, no-cache, must-revalidate'));
+if ($restricted) {
+    header('X-Robots-Tag: noindex, nofollow');
+}
 header('X-Content-Type-Options: nosniff');
 header('Accept-Ranges: bytes');
 header('ETag: ' . $etag);

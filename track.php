@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 require __DIR__ . '/lib.php';
+load_admin_session_if_present();
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -10,10 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 $relativePath = (string) ($_POST['file'] ?? '');
-$documents = load_documents();
-$document = $documents[$relativePath] ?? null;
-if (!is_array($document) || absolute_file_path($relativePath) === null) {
+if (accessible_document_file($relativePath) === null) {
     http_response_code(404);
+    header('Cache-Control: private, no-store');
     exit;
 }
 

@@ -1,8 +1,8 @@
-﻿# Product Requirements Document: MCSP RBS KPK Document Portal
+﻿# Product Requirements Document: SIMPUN
 
 ## 1. Ringkasan Produk
 
-MCSP RBS KPK Document Portal adalah aplikasi web ringan berbasis PHP untuk mempublikasikan dokumen publik MCSP RBS KPK Kabupaten Murung Raya. Publik dapat menelusuri, mempreview, menyalin tautan, dan mengunduh dokumen. Satu administrator mengelola unggahan, folder, status publikasi, dan tanggal publikasi.
+SIMPUN (Sistem Informasi Manajemen Publikasi Untuk Naskah) adalah aplikasi web ringan berbasis PHP untuk mengelola publikasi dokumen instansi kepada publik. Nama, judul, subjudul, dan logo dapat diatur sesuai instalasi. Publik dapat menelusuri, mencari, memfilter, mempreview, menyalin tautan, dan mengunduh dokumen; administrator mengelola dokumen, folder, akses, dan gaya tema global.
 
 ## 2. Tujuan
 
@@ -10,7 +10,7 @@ MCSP RBS KPK Document Portal adalah aplikasi web ringan berbasis PHP untuk mempu
 - Menampilkan struktur folder dokumen tanpa membuka akses langsung ke filesystem server.
 - Memberikan tautan dokumen yang rapi dan dapat dibagikan.
 - Menyediakan panel admin sederhana tanpa database untuk mengelola publikasi dokumen.
-- Menjaga tampilan profesional, modern, dan tepercaya dengan identitas visual biru.
+- Menjaga tampilan terbaca dan konsisten pada tema gelap hangat dengan identitas instansi yang dapat dikonfigurasi.
 
 ## 3. Pengguna
 
@@ -18,6 +18,7 @@ MCSP RBS KPK Document Portal adalah aplikasi web ringan berbasis PHP untuk mempu
 
 - Melihat daftar dokumen yang telah dipublikasikan.
 - Membuka folder dan subfolder.
+- Mencari nama dokumen atau folder, memfilter berdasarkan tahun publikasi atau jenis file, serta mengurutkan hasil.
 - Membuka preview, menyalin tautan, atau mengunduh dokumen.
 
 ### Administrator
@@ -56,21 +57,21 @@ MCSP RBS KPK Document Portal adalah aplikasi web ringan berbasis PHP untuk mempu
 
 ### 5.1 Daftar Dokumen Publik
 
-- Menampilkan judul `MCSP RBS KPK`.
-- Menampilkan subjudul `Dokumen Publikasi MCSP RBS KPK Kabupaten Murung Raya`.
+- Menampilkan identitas, judul, dan subjudul yang dikonfigurasi pada `config.php`.
 - Hanya menampilkan dokumen yang sudah dipublikasikan admin.
 - Menampilkan judul dokumen dan ekstensi file sesuai nama publik yang dikelola admin.
 - Pada halaman publik, nomor awal file tetap tampil pada nama file dan juga digunakan sebagai badge. Badge memakai nomor asli dari nama file, bukan nomor urut daftar.
 - Menampilkan seluruh teks `Tanggal publikasi: DD/Bulan/YYYY` dalam Bahasa Indonesia dengan penekanan tebal, ukuran file, serta statistik `Dilihat` dan `Diunduh`.
 - Mengurutkan dokumen dalam folder berdasarkan nomor di awal nama file, misalnya `1.`, `2.`, `10.`.
 - File tanpa nomor awal tampil setelah file bernomor dan diurutkan berdasarkan nama file.
+- Pencarian, filter, dan pengurutan berlaku atas dokumen terbit yang tersedia pada halaman tanpa mengubah data di server.
 
 ### 5.2 Folder dan Subfolder
 
 - Membaca folder dan subfolder secara rekursif dari `Files/`.
 - Menampilkan folder dalam bentuk pohon collapsible.
 - Semua folder dan subfolder di dalam `Files/` tertutup secara default dan dapat dibuka pengguna.
-- Folder tertutup menampilkan petunjuk `Klik untuk melihat daftar`.
+- Folder tertutup menampilkan tanda pembuka dan jumlah dokumen; folder yang cocok dibuka saat filter aktif.
 - Menampilkan jumlah dokumen pada setiap folder sebagai elemen yang tetap utuh pada header folder, termasuk pada layar ponsel.
 - Menampilkan folder hanya jika terdapat dokumen publik di dalamnya atau di subfoldernya.
 - Mendukung nama folder numerik seperti `2026` serta nama folder seperti `Tahun 2026`.
@@ -88,7 +89,7 @@ MCSP RBS KPK Document Portal adalah aplikasi web ringan berbasis PHP untuk mempu
 
 - Menggunakan URL rapi seperti:
   ```text
-  /MCSP/dokumen/nama-folder/nama-dokumen
+  /portal/dokumen/nama-folder/nama-dokumen
   ```
 - Menampilkan nama file, direktori, tanggal publikasi, ukuran file, preview, download, dan copy link.
 - URL tidak valid atau dokumen belum terbit menghasilkan respons `404`.
@@ -151,13 +152,15 @@ MCSP RBS KPK Document Portal adalah aplikasi web ringan berbasis PHP untuk mempu
 
 ## 8. Desain dan UX
 
-- Gaya visual: portal pemerintah modern, tepercaya, dan profesional.
-- Warna utama: navy, biru royal, biru muda, putih, dan abu kebiruan.
-- Halaman publik memakai hero/header biru dan struktur arsip dokumen yang bersih.
-- Lambang Kabupaten Murung Raya digunakan sebagai favicon dan identitas visual pada portal publik serta dashboard admin.
-- Dashboard admin memakai sidebar biru, kartu ringkasan, dan panel manajemen terstruktur.
-- Menggunakan inline SVG atau elemen CSS sederhana, tanpa ketergantungan frontend eksternal.
-- Responsif untuk desktop dan ponsel.
+- Identitas bawaan: **SIMPUN** — Sistem Informasi Manajemen Publikasi Untuk Naskah; nama aplikasi dan tagline ditampilkan bersama, dan instalasi boleh mengubah identitas/logo melalui admin.
+- Gaya tema global dipilih administrator dan diterapkan server-side pada halaman publik, detail, login, dan panel admin.
+- Tersedia tiga gaya presentasi (**Futuristic HUD**, **Classic Drive**, **Standart** dengan aksen visual terinspirasi macOS), masing-masing dalam mode **Terang** dan **Gelap**; lebar dan struktur layout explorer tetap konsisten serta fit to window.
+- Pengunjung dapat mengganti mode Terang/Gelap secara lokal pada browser masing-masing, tetapi tidak dapat mengganti gaya tema global.
+- Token warna semantik menjaga konsistensi badge, status akses, kontrol, dan focus ring di semua tema.
+- Halaman publik memakai explorer arsip, filter, dan viewer; admin memakai navigasi sidebar, statistik, tabel, dan formulir.
+- Logo dan favicon berasal dari `app_logo`; tanpa aset logo, portal tetap berfungsi.
+- Menggunakan inline SVG, CSS, dan JavaScript lokal tanpa ketergantungan frontend eksternal.
+- Responsif untuk desktop dan ponsel serta menghormati `prefers-reduced-motion`.
 
 ## 9. Kebutuhan Teknis dan Deployment
 
@@ -165,11 +168,11 @@ MCSP RBS KPK Document Portal adalah aplikasi web ringan berbasis PHP untuk mempu
 - Ekstensi PHP `fileinfo` wajib aktif.
 - Aplikasi ditempatkan di:
   ```text
-  public_html/MCSP/
+  public_html/portal/
   ```
 - URL publik yang ditargetkan:
   ```text
-  https://murungrayakab.go.id/MCSP/
+  https://domain-anda.tld/portal/
   ```
 - `config.php` harus memiliki `public_base_url` sesuai URL HTTPS publik.
 - Folder `Files/` dan `data/` harus dapat ditulis proses PHP.

@@ -8,9 +8,21 @@ if (str_starts_with($path, '/Files/') || str_starts_with($path, '/data/')) {
     exit('Not found');
 }
 
+if ($path === '/login' || $path === '/login/') {
+    define('SECRET_LOGIN_ACCESS', true);
+    require __DIR__ . '/admin.php';
+    exit;
+}
+
 if (str_starts_with($path, '/dokumen/')) {
     $_GET['slug'] = rawurldecode(substr($path, strlen('/dokumen/')));
     require __DIR__ . '/document.php';
+    exit;
+}
+
+if (str_starts_with($path, '/folder/')) {
+    $_GET['folder'] = rawurldecode(substr($path, strlen('/folder/')));
+    require __DIR__ . '/index.php';
     exit;
 }
 

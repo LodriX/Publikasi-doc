@@ -1,0 +1,194 @@
+## 2026-11-05
+- (Modified) lib.php — fallback identitas menjadi generik dan favicon opsional saat logo tidak tersedia.
+- (Modified) index.php — arsip gelap dengan pencarian, filter tahun/jenis, urutan, state kosong, dan fokus modal terkelola.
+- (Modified) document.php — detail gelap dan halaman 404 dengan jalan kembali ke arsip.
+- (Modified) admin.php — stylesheet admin baru, identitas dari konfigurasi, sesi generik, dan label tabel mobile.
+- (Modified) assets/tokens.css — palet biru-hitam, biru elektrik, amber, dan peran font baru.
+- (Modified) assets/public.css — tampilan publik gelap, kontrol filter, viewer, dan responsivitas.
+- (Created) assets/admin.css — tema gelap untuk login serta seluruh panel administrasi.
+- (Created) assets/type.css — font-face lokal untuk Zilla Slab dan Radio Canada.
+- (Created) assets/fonts/zilla-slab-semibold.ttf — font display alternatif Soliver berlisensi SIL OFL.
+- (Created) assets/fonts/OFL-zilla-slab.txt — lisensi Zilla Slab.
+- (Modified) DESIGN.md — sistem desain diperbarui untuk portal publikasi generik.
+- (Modified) README.md — dokumentasi identitas, pencarian/filter, font, dan deployment generik.
+- (Fixed) data/documents.php — fixture pengujian dipulihkan dari cadangan sebelum sesi redesign.
+- (Fixed) data/document_stats.php — statistik fixture dipulihkan dari cadangan sebelum sesi redesign.
+- (Delete) Files/<fixture pengujian> — delapan berkas contoh dihapus; Files/.htaccess dipertahankan.
+- (Delete) Files/Panduan Layanan Publik.pdf — fixture contoh dihapus.
+- (Delete) Files/2025/1. Laporan Tahunan 2025.pdf — fixture contoh dihapus.
+- (Delete) Files/2025/2. Evaluasi Program 2025.pdf — fixture contoh dihapus.
+- (Delete) Files/2026/1. Laporan Kinerja 2026.pdf — fixture contoh dihapus.
+- (Delete) Files/2026/2. Rencana Kerja 2026.pdf — fixture contoh dihapus.
+- (Delete) Files/2026/3. Ringkasan Anggaran 2026.pdf — fixture contoh dihapus.
+- (Delete) Files/2026/4. Peta Wilayah.png — fixture contoh dihapus.
+- (Delete) Files/Arsip/2024/1. Dokumen Perencanaan 2024.pdf — fixture contoh dihapus.
+- (Modified) config.php — identitas instalasi lokal dijadikan portal dokumen generik; kredensial dan alamat deployment tidak diubah.
+- (Modified) config.example.php — judul dan subjudul bawaan disamakan dengan portal generik.
+- (Modified) lib.php — fallback judul dan subjudul tidak lagi mengandaikan identitas instansi tertentu.
+- (Modified) PRD.md — kebutuhan produk, identitas, desain, dan contoh URL dibuat netral untuk instansi mana pun.
+- (Delete) logo-murung-raya.png — lambang spesifik yang tidak lagi direferensikan dihapus dari paket aplikasi.
+- (Modified) assets/tokens.css — palet Spore cellar, tinta parchment, pink tiram, tekstur halus, dan font bersama.
+- (Modified) assets/type.css — deklarasi Young Serif 400 dan Instrument Sans variable yang di-host lokal.
+- (Modified) assets/base.css — heading ringan dan treatment foto hangat bila nantinya ada foto asli.
+- (Modified) assets/public.css — pembuka, arsip, filter responsif, tombol pil, folder, detail, dan modal disejajarkan untuk keterbacaan.
+- (Modified) assets/admin.css — login dua kolom, menu admin ponsel, statistik ledger, tabel, formulir, dan state kosong disejajarkan dengan Spore.
+- (Modified) index.php — komposisi pembuka, filter lanjutan ponsel, label urutan per folder, serta akses gambar ukuran asli dalam modal.
+- (Modified) document.php — tautan gambar ukuran asli untuk halaman detail.
+- (Modified) admin.php — login dan navigasi responsif, penanda halaman aktif, serta peringkat hanya untuk aktivitas yang benar-benar ada.
+- (Modified) DESIGN.md — aturan visual Spore dan UX komponen menggantikan sistem biru lama.
+- (Modified) README.md — dokumentasi font, palet, filter ponsel, dan navigasi tanpa JavaScript.
+- (Modified) PRD.md — ketentuan visual produk diselaraskan dengan tema Spore yang generik.
+- (Created) assets/fonts/young-serif-regular.ttf — Young Serif resmi untuk judul.
+- (Created) assets/fonts/OFL-young-serif.txt — lisensi SIL OFL Young Serif.
+- (Created) assets/fonts/instrument-sans-variable.ttf — Instrument Sans resmi untuk teks dan kontrol.
+- (Created) assets/fonts/OFL-instrument-sans.txt — lisensi SIL OFL Instrument Sans.
+
+## 2026-11-06
+- (Modified) assets/tokens.css — skala tipografi dan kontras teks dinaikkan, tekstur grain diperhalus.
+- (Modified) assets/base.css — line-height judul distandarkan untuk keterbacaan.
+- (Modified) assets/public.css — hierarki pembuka proporsional, metadata 2x2 grid berlabel jelas, dan judul dokumen terhubung ke detail.
+- (Modified) assets/admin.css — dashboard terstruktur, kontras label formulir diperjelas, dan tabel beralih ke layout kartu di layar menengah.
+- (Modified) index.php — judul dokumen ditautkan ke detail dengan wrapper teks terstruktur untuk kompatibilitas perenderan.
+- (Modified) admin.php — tabel dokumen diberi kelas penanda responsif untuk adaptasi layar menengah.
+- (Modified) DESIGN.md — dokumentasi sistem desain diselaraskan dengan peningkatan keterbacaan dan hierarki baru.
+- (Modified) assets/tokens.css — palet modern futuristik obsidian, cyber glass, neon cyan, dan badge format.
+- (Modified) assets/base.css — background grid cyber subtle, konsistensi line-height dan font telemetry.
+- (Modified) assets/public.css — arsitektur File Manager HUD, mode ganda Grid dan List, sidebar navigator, dan panel inspektor.
+- (Modified) assets/admin.css — dashboard terminal administrasi bergaya cyber command center.
+- (Modified) index.php — perombakan antarmuka File Manager dengan omnibar Ctrl+K, filter chip kategori, toggle Grid/List, dan panel inspektor.
+- (Modified) document.php — halaman detail dokumen bergaya telemetry HUD.
+- (Modified) README.md — dokumentasi diperbarui untuk antarmuka Modern Futuristic File Manager.
+
+## 2026-11-07
+- (Created) logo.png — logo aplikasi baru sesuai aset gambar pengguna.
+- (Created) apple-touch-icon.png — icon 180x180 untuk Apple touch / iOS home screen.
+- (Created) assets/js/pdf.min.js — pustaka streaming pratinjau PDF instan.
+- (Created) assets/js/pdf.worker.min.js — worker threading untuk pdf.js.
+- (Created) assets/js/docx-preview.min.js — pustaka render klien dokumen DOCX.
+- (Created) assets/js/xlsx.mini.min.js — pustaka render klien spreadsheet XLSX/XLS/CSV.
+- (Modified) lib.php — dukungan apple-touch-icon.png pada page_header.
+- (Modified) admin.php — fitur pindah folder saat edit dokumen dan ganti nama (rename) folder dengan migrasi metadata & statistik otomatis.
+- (Modified) index.php — integrasi pratinjau instan halaman 1 PDF (streaming canvas) serta render lokal DOCX dan spreadsheet.
+- (Modified) document.php — penampil cepat halaman detail untuk PDF, DOCX, dan spreadsheet.
+- (Modified) assets/public.css — styling penampil cepat PDF, DOCX, dan tab spreadsheet.
+- (Modified) assets/admin.css — tombol aksi ganti nama folder di pohon direktori admin.
+- (Modified) admin.php — penambahan halaman khusus Kelola Folder (`page=folder`) untuk daftar semua folder/subfolder, pembuatan folder baru, dan inline rename.
+- (Created) assets/js/jszip.min.js — dependensi unpacking zip lokal untuk `docx-preview`.
+- (Modified) index.php — perbaikan pemuatan JSZip sebelum docx-preview, perbaikan display CSS modal hidden, dan pemindahan script library ke atas skrip inisialisasi.
+- (Modified) document.php — integrasi JSZip lokal, perbaikan urutan script library, dan wrapping inisialisasi viewer dengan DOMContentLoaded.
+- (Modified) assets/tokens.css — token warna halaman dokumen Word (`--docx-paper-bg`, `--docx-paper-ink`, `--docx-paper-shadow`).
+- (Modified) assets/public.css — perbaikan bug CSS `.preview-modal[hidden] { display: none !important; }`, perbaikan render gambar DOCX inline, dan perombakan tampilan pratinjau spreadsheet (toolbar HUD, sticky header baris pertama, zebra striping, tabular numeric alignment, dan hover highlight baris).
+- (Modified) index.php — pengaktifan `useBase64URL: true` pada `docx.renderAsync` agar gambar dokumen Word tampil via Data URI, serta perombakan antarmuka spreadsheet interaktif dengan deteksi dimensi baris x kolom dan tab workbook.
+- (Modified) document.php — sinkronisasi opsi `useBase64URL: true` untuk gambar DOCX dan viewer spreadsheet multi-tab pada halaman detail dokumen.
+- (Modified) lib.php — implementasi rate limiting login (3x gagal blokir IP 300 detik dengan sisa percobaan & countdown), fungsi `send_security_headers()`, dan proteksi ganda path traversal (`safe_relative_path`, `safe_relative_directory`).
+- (Modified) admin.php — stealth admin (akses langsung `admin.php` tanpa sesi menghasilkan HTTP 404), penanganan form login lewat rute `/login`, live JS countdown timer saat IP terblokir, tombol logout redirect ke homepage, dan proteksi upload berkas dari ekstensi eksekusi / kode skrip.
+- (Modified) router.php — penambahan rute rahasia `/login` dengan pendefinisian konstanta `SECRET_LOGIN_ACCESS`.
+- (Modified) .htaccess — konfigurasi rewrite rute rahasia `^login/?$`, blokir HTTP langsung ke direktori `Files/` dan `data/`, serta injeksi HTTP security headers (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`).
+- (Modified) index.php — penghapusan tombol publik "Terminal Admin" pada header/masthead untuk menyembunyikan akses administrasi dari publik, dan pembersihan label "Dokumen Utama (Root)" menjadi "Dokumen Utama".
+- (Modified) lib.php — implementasi sistem dinamis identitas instansi (`data/app_settings.php` dengan fallback `config.php`), auto-detect deployment subfolder (`app_base_path` dan `app_url`) zero-config untuk `domain.id/subfolder/` maupun root domain.
+- (Modified) admin.php — penambahan halaman dan navigasi "Identitas Aplikasi" (`page=identitas`) untuk kustomisasi nama instansi, headline, tagline, dan unggah logo resmi, serta pembersihan label "Dokumen Utama (Root)" menjadi "Dokumen Utama".
+- (Modified) assets/tokens.css — penambahan token palet tema terang Cyber-Frost (`[data-theme="light"]`) dengan rasio kontras tinggi dan aksen biru es.
+- (Modified) assets/public.css — perombakan layout full-width 100% edge-to-edge (penghapusan batas statis `max-width: 1480px` pada masthead dan workspace agar fleksibel mengisi seluruh monitor lebar/ultrawide), dan penambahan styling tombol switch tema (`.theme-switch-btn`).
+- (Modified) lib.php — penambahan skrip inline anti-FOUC (Flash of Unstyled Content) sinkron pada `<head>` untuk menerapkan tema instan dari `localStorage` sebelum peramban merender DOM.
+- (Modified) index.php — penambahan tombol toggle tema (ikon Sun/Moon SVG) pada masthead dengan penyimpanan state di `localStorage` (`portal_theme`).
+- (Modified) document.php — penambahan tombol toggle tema pada masthead halaman detail berkas dan sinkronisasi preferensi tema lintas halaman.
+- (Modified) lib.php — penambahan fungsi terpusat `render_format_icon()` dengan vektor SVG halaman terlipat untuk semua jenis format berkas (PDF, DOCX, XLSX, CSV, gambar).
+- (Modified) index.php & document.php — penyelarasan ikon berkas dan folder: penggantian kotak teks sempit lama dengan ikon dokumen vektor proporsional yang selaras 1:1 dengan ikon folder.
+- (Modified) assets/public.css — penyelarasan ukuran kontainer ikon berkas & folder (32x32 di mode baris/list, 40x40 di mode kartu/grid), penghapusan isu teks tumpang tindih, dan optimasi lebar judul dokumen di tampilan list.
+- (Modified) index.php — pembaruan teks instruksi panel inspektor menjadi "Pilih salah satu berkas untuk melihat detail informasi dan pratinjau cepat."
+- (Modified) admin.php — fitur batch upload multi-berkas dengan zona drag & drop dan antrean berkas (`normalize_uploaded_files`), penghapusan folder fisik kosong menggunakan `rmdir()`, dan ekspor riwayat aktivitas audit ke berkas CSV (`action=export_audit`) berformat UTF-8 BOM.
+- (Modified) assets/admin.css — penambahan styling zona dropzone interaktif, hover dragover, dan daftar antrean berkas siap unggah.
+- (Created) assets/js/qrcode.min.js — generator QR code SVG luring berbasis Kazuhiko Arase QR engine (zero-dependency, MIT).
+- (Created) download-folder.php — endpoint unduh folder sebagai arsip ZIP portabel murni PHP (`FolderZipPacker`) tanpa memerlukan ekstensi eksternal.
+- (Modified) lib.php — dukungan parameter `$metaTags` pada fungsi `page_header()` untuk injeksi OpenGraph dan Twitter Card.
+- (Modified) document.php — penambahan metadata OpenGraph (`og:title`, `og:description`, `og:url`, `og:type`, `og:image`, `twitter:card`).
+- (Modified) index.php — penambahan kontrol toolbar modal viewer (Zoom In, Zoom Out, Zoom Reset, Cetak Dokumen, Layar Penuh, dan Pindai QR Code), tombol unduh folder ZIP pada setiap summary direktori, opsi sortir ukuran berkas (terbesar & terkecil), penanda highlight teks hasil pencarian (`mark.search-match`), dan shortcut Spacebar QuickLook.
+- (Modified) assets/public.css — styling kontrol toolbar modal HUD, overlay dialog QR Code, tombol unduh folder ZIP, viewport zoom konten pratinjau, dan highlight kata kunci pencarian.
+- (Created) assets/js/share-link.js — utilitas salin tautan kanonis satu klik untuk seluruh halaman, dengan fallback peramban dan umpan balik "Tersalin!" selama 1,6 detik.
+- (Modified) index.php — salin tautan seragam di kartu grid/list, inspektor dan modal; tombol tab baru pada kartu serta modal menuju halaman viewer dokumen, bukan berkas mentah.
+- (Modified) document.php — tombol salin di halaman detail memakai utilitas bersama dan URL dokumen kanonis.
+- (Modified) assets/public.css — umpan balik salin berwarna hijau dan tata letak tombol tab baru/salin responsif pada kartu grid dan list.
+- (Modified) lib.php — level visibilitas Publik/Hanya Tautan/Privat, penyimpanan aturan folder flat-file, pewarisan status subfolder, registri dokumen admin, dan otorisasi berkas terpusat dengan kompatibilitas metadata lama.
+- (Modified) admin.php — pilihan visibilitas saat unggah/edit, toggle folder, badge pada daftar dokumen dan folder, migrasi aturan ketika folder diganti nama, serta penjagaan visibilitas ketika dokumen dipindah.
+- (Modified) index.php — explorer, filter, metrik folder, dan inspektor hanya menampilkan dokumen serta folder yang benar-benar publik.
+- (Modified) document.php — tautan langsung untuk Hanya Tautan, 404 untuk Privat tanpa sesi admin, badge status, serta larangan indeks mesin pencari bagi dokumen terbatas.
+- (Modified) view.php — otorisasi streaming per dokumen, 404 bagi pengunjung tanpa akses Privat, dan header no-store/noindex untuk konten terbatas.
+- (Modified) download.php — pengamanan unduhan fisik Privat dan header cache terbatas untuk dokumen nonpublik.
+- (Modified) track.php — statistik tidak dapat dipanggil pengunjung untuk dokumen Privat.
+- (Modified) download-folder.php — ZIP hanya mengandung dokumen yang terdaftar sebagai Publik; folder Hanya Tautan tidak dapat diunduh sebagai ZIP melalui explorer.
+- (Modified) assets/base.css — badge status hijau, kuning, merah, dan netral yang konsisten di halaman publik/admin.
+- (Modified) assets/admin.css — penataan form visibilitas folder dan tabel administrasi yang dapat digulir secara horizontal.
+- (Modified) assets/public.css — jarak badge visibilitas pada halaman detail dokumen.
+- (Modified) view.php — berkas Publik kini selalu divalidasi ulang melalui ETag/304 agar pengubahan ke Privat langsung efektif pada akses berikutnya.
+- (Modified) index.php — daftar explorer tidak disimpan di cache peramban setelah perubahan visibilitas.
+- (Modified) document.php — halaman detail termasuk respons 404 diberi header no-store untuk mencegah pratinjau terbatas tersimpan.
+- (Modified) download.php — respons unduhan disetel no-store agar berkas yang dibatasi tidak tersimpan ulang lewat cache HTTP.
+- (Modified) lib.php — penyimpanan metadata dokumen dan percobaan PIN secara atomik, pembatalan cache OPcache, hash PIN enam digit, grant sesi yang terikat berkas/hash, serta batas lima kegagalan PIN per alamat IP selama lima menit.
+- (Modified) document.php — gerbang PIN Hanya Tautan dengan CSRF, sesi verifikasi, pesan sisa percobaan/429, redirect setelah berhasil, dan halaman verifikasi tanpa bocoran metadata berkas.
+- (Modified) admin.php — PIN opsional saat unggah/publikasi dan opsi pertahankan/ganti/hapus saat edit; checkbox lintas tabel serta aksi massal visibilitas, pemindahan, dan hapus dengan validasi, konfirmasi permanen, audit, perlindungan tabrakan nama, pemulihan berkas, dan pembaruan statistik.
+- (Modified) view.php — respons penolakan akses PIN tidak dapat disimpan di cache.
+- (Modified) track.php — respons statistik yang ditolak karena PIN tidak dapat disimpan di cache.
+- (Modified) assets/admin.css — penataan opsi PIN, kolom pilihan dokumen, dan bilah aksi massal yang responsif.
+- (Modified) assets/public.css — tata letak dan umpan balik gerbang PIN pada halaman tautan terlindungi.
+- (Modified) index.php — klik kiri pada judul dokumen kini memilih kartu dan mengisi Inspektor Berkas; navigasi tab baru dipindahkan ke tombol eksplisit di inspektor, sementara Ctrl/Cmd/klik tengah pada tautan tetap berfungsi; inspektor menjadi drawer bawah responsif pada viewport ≤1200px dengan backdrop, Escape, dan pengelolaan scroll.
+- (Modified) assets/public.css — gaya drawer inspektor dan backdrop responsif untuk desktop sempit, tablet, dan ponsel.
+## 2026-11-07
+- (Modified) lib.php — tema publik dipancarkan server-side pada elemen HTML dengan default Futuristic HUD Dark; fallback identitas aplikasi menggunakan Simpun Berkas.
+- (Modified) assets/tokens.css — token warna merek Simpun Berkas dan enam palet tema (Futuristic HUD, Classic Drive, macOS dalam mode terang/gelap).
+- (Created) assets/themes.css — penyesuaian visual struktural tiga tema dan dukungan reduced motion.
+- (Modified) assets/base.css — latar non-HUD menjadi polos sesuai tema Classic Drive/macOS.
+- (Modified) assets/public.css — impor gaya tema dan penghapusan kontrol Light/Dark yang sebelumnya tersedia untuk pengunjung.
+- (Modified) assets/admin.css — impor gaya tema dan form pilihan tema global yang responsif di halaman identitas.
+- (Modified) admin.php — pilihan tema/mode admin, pratinjau langsung, validasi, penyimpanan server-side, audit perubahan, dan copy login Simpun Berkas.
+- (Modified) index.php — penghapusan kontrol tema pengunjung dan branding masthead Simpun Berkas.
+- (Modified) document.php — penghapusan JavaScript pengubah tema dari halaman detail.
+- (Modified) config.php — default lokal Simpun Berkas dengan Futuristic HUD Dark; kredensial dan URL deployment tidak diubah.
+- (Modified) config.example.php — branding dan default tema Simpun Berkas.
+- (Modified) README.md — quick start PHP, identitas Simpun Berkas, dan kebijakan tema global admin.
+- (Modified) DESIGN.md — sistem desain, identitas merek, dan spesifikasi tiga tema.
+- (Modified) PRD.md — identitas Simpun Berkas dan kebutuhan tema global admin.
+- (Modified) GLOSSARY.md — definisi Simpun Berkas dan istilah tema global/mode warna.
+- (Modified) assets/tokens.css & assets/themes.css — koreksi warna teks tombol khusus Classic Light dan macOS Dark agar kontras minimal 4.5:1 terpenuhi.
+- (Modified) PRD.md — deskripsi produk dan kriteria UX diperbarui untuk branding Simpun Berkas serta kontrol tema khusus admin.
+- (Modified) lib.php — gaya internal tema ketiga dinormalisasi sebagai `standart`; identitas default menjadi SIMPUN, mode admin menjadi default global, dan mode tamu dapat ditentukan dari cookie per browser.
+- (Modified) assets/js/theme-mode.js — pengunjung dapat mengganti mode terang/gelap yang persisten secara lokal tanpa mengubah gaya global admin.
+- (Modified) assets/themes.css — struktur tema dibedakan: HUD telemetry tiga panel, Classic Drive daftar arsip kompak, dan Standart workspace bergaya Finder/macOS dengan sidebar dan panel pratinjau.
+- (Modified) assets/tokens.css — nama token/selektor tema ketiga dialihkan menjadi Standart sambil mempertahankan palet terinspirasi macOS.
+- (Modified) assets/base.css — latar Standart mengikuti permukaan bersih gaya macOS.
+- (Modified) assets/public.css — kontrol mode warna pengunjung dan penanda gaya global admin.
+- (Modified) assets/admin.css — pratinjau layout mini unik untuk setiap gaya tema.
+- (Modified) index.php — sidebar identitas SIMPUN, pemilih mode pengunjung, tema daftar default untuk Classic/Standart, dan layout list/grid tetap disesuaikan tema.
+- (Modified) document.php — kontrol mode warna pengunjung pada halaman detail serta indikator gaya untuk admin.
+- (Modified) admin.php — label Standart, keterangan default mode, nama SIMPUN pada login, dan validasi tema internal.
+- (Modified) config.php & config.example.php — nama/headline default SIMPUN; kredensial lokal dan URL deployment tetap tidak berubah.
+- (Modified) README.md, DESIGN.md, PRD.md & GLOSSARY.md — branding SIMPUN yang benar, hak pengunjung mengubah mode saja, nama Standart, dan perbedaan struktur tema.
+- (Verified) QA browser/E2E — enam tema/mode, layout tiga gaya yang berbeda, mode lokal pengunjung, brand SIMPUN, kontras ≥4.5:1, klik Inspektor, dan regresi akses folder/PIN lulus.
+- (Fixed) index.php & assets/themes.css — aturan grid tiga kolom tema kini hanya diterapkan ke `.fm-explorer-workspace`; halaman detail tidak lagi mewarisi lebar sidebar Classic 220px dan menggunakan seluruh lebar konten.
+- (Verified) detail-layout-repro.mjs — halaman detail pada HUD, Classic Drive, dan Standart masing-masing memakai kolom tunggal penuh pada viewport desktop 1792px.
+## 2026-11-07
+- (Fixed) data/app_settings.php — nama lama “Simpun Berkas” diganti menjadi **SIMPUN**, dan headline beranda disetel ke “Sistem Informasi Manajemen Publikasi Untuk Naskah”; pengaturan lama dibackup ke direktori temp QA.
+- (Modified) lib.php — judul beranda menggabungkan SIMPUN dengan tagline tanpa duplikasi; halaman lain tetap memakai pola “judul halaman - SIMPUN”.
+- (Modified) index.php — tagline kepanjangan tampil di masthead menggantikan label versi.
+- (Modified) config.php & config.example.php — headline default memakai tagline resmi.
+- (Fixed) assets/themes.css — aturan lebar maksimum, grid, dan inspector tema yang mengubah struktur dihapus; semua tema memakai layout bersama full-width/responsif.
+- (Modified) index.php — grid menjadi default bersama semua tema; preferensi list/grid tersimpan pengunjung tetap dihormati.
+- (Modified) README.md, DESIGN.md & PRD.md — dokumentasi diselaraskan: semua tema memakai layout fit-to-window; perbedaan hanya pada presentasi visual.
+- (Verified) simpun-theme-e2e.mjs — nama/tagline/judul, enam kombinasi tema-mode, layout desktop full-width konsisten, tampilan mobile satu kolom tanpa overflow, dan mode lokal pengunjung lulus.
+- (Created) assets/footer.css — footer aplikasi responsif dengan varian visual HUD, Classic Drive, dan Standart serta dukungan mode terang/gelap.
+- (Modified) lib.php — render_app_footer() ditambahkan ke page_footer(); identitas dinamis, kredit lodrix.id, dan tautan repositori GitHub muncul di seluruh halaman berlayout.
+- (Modified) assets/public.css & assets/admin.css — footer bersama diimpor untuk halaman publik, PIN, login, dan admin.
+- (Modified) DESIGN.md — anatomi dan perilaku footer lintas tema didokumentasikan.
+- (Verified) simpun-footer-pages-e2e.mjs — brand/tagline, link lodrix.id dan GitHub lolos di beranda, detail dokumen, dan login; footer mobile fit tanpa overflow.
+- (Created) E:\laragon\www\simpun-site — proyek promosi statis mandiri untuk diunggah ke public_html/simpun/.
+- (Created) E:\laragon\www\simpun-site\index.html — landing page produk dengan fitur terverifikasi, tema, alur penggunaan, CTA demo, docs, dan GitHub.
+- (Created) E:\laragon\www\simpun-site\demo\index.html & assets/js/demo.js — demo antarmuka browser-only dengan data sintetis, pencarian, folder, filter, tema/mode, preview, copy tautan, dan reset.
+- (Created) E:\laragon\www\simpun-site\docs\index.html & assets/js/docs.js — dokumentasi instalasi, konfigurasi, pengelolaan, akses/PIN, tema, preview, backup, troubleshooting, dan FAQ.
+- (Created) E:\laragon\www\simpun-site\assets/css/site.css, demo.css, docs.css & showcase.css — sistem desain responsif, stylesheet demo/docs, dan galeri screenshot tema.
+- (Created) E:\laragon\www\simpun-site\assets/js/site.js — navigasi mobile, mode warna promosi, dan interaksi pilihan tema.
+- (Created) E:\laragon\www\simpun-site\assets/fonts & assets/img — font berlisensi lokal, logo SIMPUN, enam screenshot tema/mode, screenshot mobile, dan OG image.
+- (Created) E:\laragon\www\simpun-site\.htaccess, 404.html, robots.txt, sitemap.xml & README.md — aturan hosting subfolder, SEO dasar, fallback 404, dan panduan deploy.
+- (Verified) simpun-site-e2e.mjs — navigasi tema, filter demo, preview, reset, docs search/anchor, subfolder /simpun/, dan mobile tanpa overflow lulus; link eksternal GitHub dan lodrix.id merespons.
+- (Modified) assets/footer.css — layout flex mendorong footer ke dasar viewport pada halaman pendek dan membiarkannya mengikuti konten pada halaman panjang.
+- (Modified) DESIGN.md — perilaku sticky-footer dan jarak bawah panel Standart didokumentasikan.
+- (Modified) progress.txt — pekerjaan footer sticky dicatat.
+- (Verified) browser — footer di halaman pendek/panjang pada login dan beranda lulus untuk HUD, Classic, Standart; panel Standart mempertahankan inset 24px dan tampilan mobile tidak overflow.
