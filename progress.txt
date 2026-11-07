@@ -192,3 +192,11 @@
 - (Modified) DESIGN.md — perilaku sticky-footer dan jarak bawah panel Standart didokumentasikan.
 - (Modified) progress.txt — pekerjaan footer sticky dicatat.
 - (Verified) browser — footer di halaman pendek/panjang pada login dan beranda lulus untuk HUD, Classic, Standart; panel Standart mempertahankan inset 24px dan tampilan mobile tidak overflow.
+- (Modified) README.md — halaman proyek GitHub disusun ulang dengan pengantar, badge, screenshot sintetis, fitur, quick start, keamanan, dokumentasi, dan informasi lisensi yang akurat.
+- (Created) docs/screenshots/simpun-preview.png — screenshot explorer tema HUD dari demo sintetis untuk README.
+- (Modified) README.md — logo SIMPUN ditampilkan lebih menonjol dan ditautkan ke aset logo repositori.
+- (Modified) README.md — logo memakai aset relatif repo dan panduan instalasi cPanel diperluas dari unduh source, konfigurasi dan hash password, permission, login, sampai verifikasi keamanan.
+- (Created) E:\laragon\www\SIMPUN-app-ready-to-deploy.zip — paket aplikasi siap unggah dengan data/documents.php kosong dan aturan akses Files/data, tanpa config.php, metadata, dokumen, atau kredensial lokal.
+- (Modified) config.example.php — hash password sementara administrator disetel agar cocok dengan kredensial admin/admin123.
+- (Modified) README.md — kredensial sementara admin/admin123 dijelaskan dan instruksi wajib mengganti password dipertegas.
+- (Modified) E:\laragon\www\SIMPUN-app-ready-to-deploy.zip — paket deploy dibangun ulang dengan hash kredensial sementara terbaru tanpa menyertakan config.php atau data lokal.
