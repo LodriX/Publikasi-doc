@@ -217,3 +217,5 @@
 - (Modified) docs/screenshots/app-explorer-standart-light.png — screenshot tema Standart diperbarui dengan data contoh generik.
 - (Modified) docs/screenshots/app-explorer-mobile-hud-dark.png — screenshot mobile diperbarui dengan data contoh generik.
 - (Modified) docs/screenshots/app-admin-dashboard-hud-dark.png — screenshot dashboard diperbarui menggunakan data contoh generik.
+- (Created) LICENSE — lisensi MIT ditambahkan untuk proyek SIMPUN.
+- (Modified) README.md — bagian Lisensi menjelaskan cakupan MIT dan lisensi komponen pihak ketiga.

@@ -198,7 +198,9 @@ Laporan bug, saran fitur, dan kontribusi sangat diterima. Sebelum membuka issue,
 
 ## Lisensi
 
-Repositori ini belum mencantumkan berkas `LICENSE`. Sampai lisensi resmi ditambahkan, jangan menganggap kode tersedia untuk penggunaan, modifikasi, atau distribusi ulang berdasarkan lisensi open-source tertentu. Lisensi font dan pustaka pihak ketiga mengikuti berkas atribusi masing-masing.
+Kode dan materi proyek SIMPUN dilisensikan di bawah [MIT License](LICENSE). Lisensi ini mengizinkan penggunaan, modifikasi, dan distribusi ulang, dengan mempertahankan pemberitahuan hak cipta dan lisensi.
+
+Font dan pustaka pihak ketiga yang dibundel tetap mengikuti lisensi masing-masing; lihat berkas atribusi/lisensi yang menyertai aset tersebut. Lisensi MIT proyek ini tidak menggantikan lisensi komponen pihak ketiga.
 
 ---
 
