@@ -200,3 +200,13 @@
 - (Modified) config.example.php — hash password sementara administrator disetel agar cocok dengan kredensial admin/admin123.
 - (Modified) README.md — kredensial sementara admin/admin123 dijelaskan dan instruksi wajib mengganti password dipertegas.
 - (Modified) E:\laragon\www\SIMPUN-app-ready-to-deploy.zip — paket deploy dibangun ulang dengan hash kredensial sementara terbaru tanpa menyertakan config.php atau data lokal.
+
+## 2026-11-08
+- (Modified) README.md — galeri Tampilan diganti dengan screenshot langsung aplikasi SIMPUN (explorer, pratinjau dokumen, dashboard admin, mobile, dan variasi tema); keterangan menegaskan seluruh dokumen dalam tangkapan bersifat sintetis.
+- (Created) docs/screenshots/app-explorer-hud-dark.png — tangkapan halaman explorer aplikasi dengan delapan dokumen contoh sintetis.
+- (Created) docs/screenshots/app-document-preview-hud-dark.png — tangkapan modal pratinjau PDF contoh dalam aplikasi.
+- (Created) docs/screenshots/app-admin-dashboard-hud-dark.png — tangkapan dashboard administrator aplikasi dengan data contoh sintetis.
+- (Created) docs/screenshots/app-explorer-mobile-hud-dark.png — tangkapan explorer aplikasi pada viewport ponsel.
+- (Created) docs/screenshots/app-explorer-classic-light.png — tangkapan aplikasi dengan tema Classic Drive mode terang.
+- (Created) docs/screenshots/app-explorer-standart-light.png — tangkapan aplikasi dengan tema Standart mode terang.
+- (Modified) README.md — galeri difokuskan pada explorer, dashboard, mobile, dan variasi tema; preview PDF contoh yang kurang representatif tidak ditampilkan.

@@ -33,17 +33,27 @@ Metadata disimpan sebagai berkas di `data/`, sedangkan dokumen berada di `Files/
 ## Tampilan
 
 <p align="center">
-  <img src="docs/screenshots/simpun-preview.png" alt="Pratinjau explorer dokumen SIMPUN dengan tema Futuristic HUD" width="100%">
+  <img src="docs/screenshots/app-explorer-hud-dark.png" alt="Explorer aplikasi SIMPUN asli dengan dokumen contoh sintetis, tema Futuristic HUD" width="100%">
 </p>
 
-<p align="center"><sub>Cuplikan demo dengan data sintetis; tidak menampilkan arsip instansi nyata.</sub></p>
+<p align="center"><sub>Screenshot diambil langsung dari aplikasi SIMPUN. Seluruh nama dan isi dokumen yang terlihat adalah contoh sintetis, bukan arsip instansi nyata.</sub></p>
 
 <details>
-  <summary>Lihat variasi tema lainnya</summary>
+  <summary>Lihat screenshot aplikasi lainnya</summary>
 
-  | Futuristic HUD | Classic Drive | Standart |
+  **Dashboard administrator**
+
+  <p align="center"><img src="docs/screenshots/app-admin-dashboard-hud-dark.png" alt="Dashboard admin aplikasi SIMPUN dengan data contoh sintetis" width="100%"></p>
+
+  **Tampilan mobile**
+
+  <p align="center"><img src="docs/screenshots/app-explorer-mobile-hud-dark.png" alt="Explorer aplikasi SIMPUN pada layar ponsel" width="280"></p>
+
+  **Variasi tema aplikasi**
+
+  | Futuristic HUD · Gelap | Classic Drive · Terang | Standart · Terang |
   |---|---|---|
-  | <img src="docs/screenshots/demo-hud-dark.png" alt="Tema Futuristic HUD" width="280"> | <img src="docs/screenshots/demo-classic-dark.png" alt="Tema Classic Drive" width="280"> | <img src="docs/screenshots/demo-standart-light.png" alt="Tema Standart" width="280"> |
+  | <img src="docs/screenshots/app-explorer-hud-dark.png" alt="Aplikasi SIMPUN dengan tema Futuristic HUD gelap" width="100%"> | <img src="docs/screenshots/app-explorer-classic-light.png" alt="Aplikasi SIMPUN dengan tema Classic Drive terang" width="100%"> | <img src="docs/screenshots/app-explorer-standart-light.png" alt="Aplikasi SIMPUN dengan tema Standart terang" width="100%"> |
 </details>
 
 ## Fitur
