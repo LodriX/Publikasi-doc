@@ -36,7 +36,7 @@ Metadata disimpan sebagai berkas di `data/`, sedangkan dokumen berada di `Files/
   <img src="docs/screenshots/app-explorer-hud-dark.png" alt="Explorer aplikasi SIMPUN asli dengan dokumen contoh sintetis, tema Futuristic HUD" width="100%">
 </p>
 
-<p align="center"><sub>Screenshot diambil langsung dari aplikasi SIMPUN. Seluruh nama dan isi dokumen yang terlihat adalah contoh sintetis, bukan arsip instansi nyata.</sub></p>
+<p align="center"><sub>Screenshot diambil langsung dari aplikasi SIMPUN. Nama folder dan dokumen bersifat umum; seluruh data adalah contoh sintetis, bukan arsip instansi nyata.</sub></p>
 
 <details>
   <summary>Lihat screenshot aplikasi lainnya</summary>

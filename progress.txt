@@ -210,3 +210,10 @@
 - (Created) docs/screenshots/app-explorer-classic-light.png — tangkapan aplikasi dengan tema Classic Drive mode terang.
 - (Created) docs/screenshots/app-explorer-standart-light.png — tangkapan aplikasi dengan tema Standart mode terang.
 - (Modified) README.md — galeri difokuskan pada explorer, dashboard, mobile, dan variasi tema; preview PDF contoh yang kurang representatif tidak ditampilkan.
+- (Modified) README.md — galeri screenshot diperbarui dengan dokumen contoh dan folder bernama umum, tanpa konteks khusus pemerintahan.
+- (Modified) README.md — keterangan screenshot menyebut nama folder/dokumen umum dan menegaskan bahwa data hanya sintetis.
+- (Modified) docs/screenshots/app-explorer-hud-dark.png — screenshot explorer diperbarui dengan data contoh generik.
+- (Modified) docs/screenshots/app-explorer-classic-light.png — screenshot tema Classic diperbarui dengan data contoh generik.
+- (Modified) docs/screenshots/app-explorer-standart-light.png — screenshot tema Standart diperbarui dengan data contoh generik.
+- (Modified) docs/screenshots/app-explorer-mobile-hud-dark.png — screenshot mobile diperbarui dengan data contoh generik.
+- (Modified) docs/screenshots/app-admin-dashboard-hud-dark.png — screenshot dashboard diperbarui menggunakan data contoh generik.
